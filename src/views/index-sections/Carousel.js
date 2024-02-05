@@ -14,19 +14,19 @@ import {
 
 const items = [
   {
-    src: require("assets/img/bg1.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States"
+    src: require("assets/img/bg2.jpg"),
+    altText: "Kandy Culture",
+    caption: "Kandy Culture"
   },
   {
     src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States"
+    altText: "Somewhere Beyond, Kandy",
+    caption: "Somewhere Beyond, Kandy"
   },
   {
     src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States"
+    altText: "Peradeniya Botanical Garden, kandy",
+    caption: "Peradeniya Botanical Garden, Kandy"
   }
 ];
 
