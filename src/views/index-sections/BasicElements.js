@@ -22,10 +22,13 @@ import {
   CardText,
   Card,
 } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 // core components
 
 function BasicElements() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="section section-tabs">
@@ -45,12 +48,8 @@ function BasicElements() {
                 tooth relic of the revered Buddha, a tooth within the royal
                 palace complex..
               </CardText>
-              <Button
-                color="primary"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                Go somewhere
+              <Button color="primary" onClick={() => navigate("/maligawa")}>
+                Read More
               </Button>
             </CardBody>
           </Card>
@@ -68,12 +67,8 @@ function BasicElements() {
                 around 4,000 species of plants including medicinal trees,
                 flowering trees and fascinating trails.
               </CardText>
-              <Button
-                color="primary"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                Go somewhere
+              <Button color="primary" onClick={() => navigate("/garden")}>
+                Read More
               </Button>
             </CardBody>
           </Card>
@@ -93,10 +88,9 @@ function BasicElements() {
               </CardText>
               <Button
                 color="primary"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
+                onClick={() => navigate("/bahiravakanda")}
               >
-                Go somewhere
+                Read More
               </Button>
             </CardBody>
           </Card>
@@ -114,12 +108,8 @@ function BasicElements() {
                 above sea level. It offers a panoramic view of Kandy Lake, Sri
                 Dalada Palace, Kandy Royal Palace and the city center.
               </CardText>
-              <Button
-                color="primary"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                Go somewhere
+              <Button color="primary" onClick={() => navigate("/viewPoint")}>
+                Read More
               </Button>
             </CardBody>
           </Card>
@@ -137,12 +127,8 @@ function BasicElements() {
                 well-maintained park and woodland, originally laid out by Sri
                 Wickrama Rajasinghe with good walking trails.
               </CardText>
-              <Button
-                color="primary"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                Go somewhere
+              <Button color="primary" onClick={() => navigate("/royalPark")}>
+                Read More
               </Button>
             </CardBody>
           </Card>
@@ -160,12 +146,8 @@ function BasicElements() {
                 one of the most beautiful waterfalls in Sri Lanka, offering an
                 adventurous journey through dense forests and rocky terrain.
               </CardText>
-              <Button
-                color="primary"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                Go somewhere
+              <Button color="primary" onClick={() => navigate("/")}>
+                Read More
               </Button>
             </CardBody>
           </Card>
@@ -183,12 +165,8 @@ function BasicElements() {
                 Ravana was laid to rest after he was killed by Lord Rama in the
                 final battle. 'Yahangala' means bedrock in Sinhala.
               </CardText>
-              <Button
-                color="primary"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                Go somewhere
+              <Button color="primary" onClick={() => navigate("/yahangala")}>
+                Read More
               </Button>
             </CardBody>
           </Card>
@@ -206,12 +184,8 @@ function BasicElements() {
                 Lanka, south-west of Kandy. The maximum height of the range is
                 1,200 m (3,800 ft). The mountain range consists of seven peaks.
               </CardText>
-              <Button
-                color="primary"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                Go somewhere
+              <Button color="primary" onClick={() => navigate("/hanthana")}>
+                Read More
               </Button>
             </CardBody>
           </Card>
@@ -229,12 +203,8 @@ function BasicElements() {
                 Lanka. It is known that Ambuluwawa Temple is evocative of a
                 Buddhist 'stupa' with a height of 48 meters.
               </CardText>
-              <Button
-                color="primary"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                Go somewhere
+              <Button color="primary" onClick={() => navigate("/ambuluwawa")}>
+                Read More
               </Button>
             </CardBody>
           </Card>
