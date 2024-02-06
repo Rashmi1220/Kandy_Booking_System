@@ -19,7 +19,7 @@ import RoyalPark from "views/places/royalPark";
 import GaradiElla from "views/places/garadiElla";
 import Yahangala from "views/places/Yahangala";
 import Hanthana from "views/places/hanthana";
-import Ambuluwawa from "views/places/bahirawakanda copy";
+import Ambuluwawa from "views/places/ambuluwawa";
 // import ProfilePage from "views/examples/ProfilePage.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -32,6 +32,7 @@ function BasicElements() {
   return (
     <>
       <div className="section section-tabs">
+        e
         <Container>
           {/* <Col className="ml-auto mr-auto"md="10" xl="6"> */}
           <h3 className="title">Places</h3>
