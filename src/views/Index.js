@@ -11,16 +11,16 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 
 // sections for this page
 //
-import BasicElements from "./index-sections/BasicElements.js";
+import Places from "./index-sections/Places.js";
 
 import Tabs from "./index-sections/Tabs.js";
 
 import Carousel from "./index-sections/Carousel.js";
 
 import CompleteExamples from "./index-sections/CompleteExamples.js";
-// import SignUp from "./index-sections/SignUp.js";
+import SignUp from "./index-sections/SignUp.js";
 
-import Download from "./index-sections/Download.js";
+import About from "./index-sections/About.js";
 
 function Index() {
   React.useEffect(() => {
@@ -40,12 +40,12 @@ function Index() {
       <div className="wrapper">
         <IndexHeader />
         <div className="main">
-          <BasicElements />
+          <Places />
           <Tabs />
           <Carousel />
           <CompleteExamples />
           {/* <SignUp /> */}
-          <Download />
+          <About />
         </div>
         <DarkFooter />
       </div>

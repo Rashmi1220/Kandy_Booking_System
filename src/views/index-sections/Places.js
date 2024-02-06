@@ -26,12 +26,12 @@ import { useNavigate } from "react-router-dom";
 
 // core components
 
-function BasicElements() {
+function Places() {
   const navigate = useNavigate();
 
   return (
     <>
-      <div className="section section-tabs">
+      <div className="section section-tabs" id="places">
         e
         <Container>
           {/* <Col className="ml-auto mr-auto"md="10" xl="6"> */}
@@ -217,4 +217,4 @@ function BasicElements() {
   );
 }
 
-export default BasicElements;
+export default Places;

@@ -24,7 +24,7 @@ function IndexHeader() {
 
   return (
     <>
-      <div className="page-header clear-filter" filter-color="blue">
+      <div className="page-header clear-filter" filter-color="blue" id="home">
         <div
           className="page-header-image"
           style={{
@@ -42,7 +42,6 @@ function IndexHeader() {
             <h1 className="h1-seo">Discover story-worthy travel moments</h1>
             <h3>Make memories on your next trip</h3>
           </div>
-      
         </Container>
       </div>
     </>

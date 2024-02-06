@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 // reactstrap components
 import {
   Button,
@@ -18,6 +18,7 @@ import {
 } from "reactstrap";
 
 function IndexNavbar() {
+  const navigate = useNavigate();
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
@@ -64,27 +65,47 @@ function IndexNavbar() {
                   href="#pablo"
                   onClick={(e) => {
                     e.preventDefault();
-                    document
-                      .getElementById("download-section")
-                      .scrollIntoView();
+                    document.getElementById("home").scrollIntoView();
                   }}
                 >
                   <i className="now-ui-icons arrows-1_cloud-download-93"></i>
                   <p>HOME</p>
                 </NavLink>
               </NavItem>
-              <UncontrolledDropdown nav>
-                <DropdownToggle
-                  caret
-                  color="default"
-                  href="#pablo"
-                  nav
-                  onClick={(e) => e.preventDefault()}
+              <NavItem>
+                <NavLink
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById("places").scrollIntoView();
+                  }}
                 >
-                  <i className="now-ui-icons design_app mr-1"></i>
+                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
                   <p>Places</p>
-                </DropdownToggle>
-              </UncontrolledDropdown>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById("about").scrollIntoView();
+                  }}
+                >
+                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <p>About</p>
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink
+                  onClick={(e) => {
+                    navigate("/signUp");
+                    e.preventDefault();
+                  }}
+                >
+                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <p>SignUp</p>
+                </NavLink>
+              </NavItem>
 
               <NavItem>
                 <NavLink
