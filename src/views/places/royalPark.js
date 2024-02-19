@@ -12,19 +12,19 @@ import {
 
 const items = [
   {
-    src: require("assets/img/bg5.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States",
+    src: require("assets/img/r1.jpg"),
+    altText: "Wales Park, Kandy",
+    caption: "Wales Park, Kandy",
   },
   {
-    src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States",
+    src: require("assets/img/r2.jpg"),
+    altText: "Wales Park, Kandy",
+    caption: "Wales Park, Kandy",
   },
   {
-    src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States",
+    src: require("assets/img/r3.jpg"),
+    altText: "Wales Park, Kandy",
+    caption: "Wales Park, Kandy",
   },
 ];
 
@@ -55,11 +55,11 @@ const RoyalPark = () => {
 
   return (
     <>
-      <h3 style={{ color: "green" }}>ADD NAME </h3>
+     
       <Container>
         <div className="title">
           <h4 style={{ textAlign: "center", color: "greenyellow" }}>
-            Carousel
+          Royal Place Park Kandy
           </h4>
         </div>
         <Row className="justify-content-center">
@@ -112,7 +112,17 @@ const RoyalPark = () => {
           </Col>
         </Row>
       </Container>
-      <h5> add descriptaion</h5>
+      <h5> For that perfect fun time along with your family and friends Wales Park is the best option for you while you are visiting Sri Lanka. For your bucket list this is another best places to visit in Sri Lanka. Situated at the top of a small hill this park overlooks the Kandy Lake, this park is known for its majestic view. This park is also known as The Royal Palace Park.
+
+Highlights: There is one Japanese field gun in the park which was captured by the British 14th Army in Burma during World War II and presented to the city of Kandy by Lord Mountbatten.
+
+Location: The Wales Park is located at Rajapihilla Mawatha, Kandy 20000, Sri Lanka
+
+Price: The approximate price for the entry is 219 LKR. For that perfect fun time along with your family and friends Wales Park is the best option for you while you are visiting Sri Lanka. For your bucket list this is another best places to visit in Sri Lanka. Situated at the top of a small hill this park overlooks the Kandy Lake, this park is known for its majestic view. This park is also known as The Royal Palace Park.
+
+Highlights: There is one Japanese field gun in the park which was captured by the British 14th Army in Burma during World War II and presented to the city of Kandy by Lord Mountbatten.
+
+Location: The Wales Park is located at Rajapihilla Mawatha, Kandy 20000, Sri Lanka</h5>
       <Button color="primary" onClick={() => navigate("/")}>
         Go back
       </Button>

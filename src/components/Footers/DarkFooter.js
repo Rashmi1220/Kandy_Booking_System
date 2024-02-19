@@ -8,11 +8,11 @@ function DarkFooter() {
   return (
     <footer className="footer" data-background-color="black">
       <Container>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <a
-                href="https://www.creative-tim.com?ref=nukr-dark-footer"
+                href=""
                 target="_blank"
               >
                 Creative Tim
@@ -20,7 +20,7 @@ function DarkFooter() {
             </li>
             <li>
               <a
-                href="http://presentation.creative-tim.com?ref=nukr-dark-footer"
+                href=""
                 target="_blank"
               >
                 About Us
@@ -28,31 +28,31 @@ function DarkFooter() {
             </li>
             <li>
               <a
-                href="http://blog.creative-tim.com?ref=nukr-dark-footer"
+                href=""
                 target="_blank"
               >
                 Blog
               </a>
             </li>
           </ul>
-        </nav>
-        <div className="copyright" id="copyright">
+        </nav> */}
+        {/* <div className="copyright" id="copyright">
           © {new Date().getFullYear()}, Designed by{" "}
           <a
-            href="https://www.invisionapp.com?ref=nukr-dark-footer"
+            href=""
             target="_blank"
           >
             Invision
           </a>
           . Coded by{" "}
           <a
-            href="https://www.creative-tim.com?ref=nukr-dark-footer"
+            href=""
             target="_blank"
           >
             Creative Tim
           </a>
           .
-        </div>
+        </div> */}
       </Container>
     </footer>
   );

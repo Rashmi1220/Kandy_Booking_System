@@ -13,19 +13,19 @@ import {
 
 const items = [
   {
-    src: require("assets/img/bg5.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States",
+    src: require("assets/img/G1.jpg"),
+    altText: "Garandi Ella, Kalugala",
+    caption: "Garandi Ella, Kalugala",
   },
   {
-    src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States",
+    src: require("assets/img/G2.jpg"),
+    altText: "Garandi Ella, Kalugala",
+    caption: "Garandi Ella, Kalugala",
   },
   {
-    src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States",
+    src: require("assets/img/G3.jpg"),
+    altText: "Garandi Ella, Kalugala",
+    caption: "Garandi Ella, Kalugala",
   },
 ];
 
@@ -56,11 +56,10 @@ const GaradiElla = () => {
 
   return (
     <>
-      <h3 style={{ color: "green" }}>ADD NAME </h3>
       <Container>
         <div className="title">
           <h4 style={{ textAlign: "center", color: "greenyellow" }}>
-            Carousel
+          Garadi Ella
           </h4>
         </div>
         <Row className="justify-content-center">
@@ -113,7 +112,17 @@ const GaradiElla = () => {
           </Col>
         </Row>
       </Container>
-      <h5> add descriptaion</h5>
+      <h5> Kalugala Gerandi Ella is a cluster of waterfalls falling down the Gerandigala mountain, which is situated in Kalugala area of Ududumbara, Kandy district. When you travel from Kandy to Mahiyanganaya on Mahiyanganaya road (A25), you will find this beautiful waterfall on the left side, lying far away towards Kalugala. This cluster has seven segments and when put together, the total height is around 200 to 240 meters. From Mahiyanganaya road, you can only view 4 of these segments.
+
+About the destination
+Kalugala Gerandi Ella hike is presently very popular among the young travellers in Sri Lanka.  This is not a very wide waterfall and the name of this waterfall implies that it is a rat snake-shaped waterfall. It is possible to hike upwards this waterfall cluster, but you need to be careful since there are steep vertical segments to climb. The water flow rapidly decreases during the dry season and according to villagers, December is the best month to see the waterfall. When you reach the top, Kehelpothdoruwegala, Yahangala, Nawanagala, Balalgira, Aliyawetuna Ela range, Sphinx rock, Dumbanagala and some other mountains can be seen. If you love to climb up this waterfall cluster, the best way is to get the help of the villagers, who are always happy to assist you.
+
+Reaching the destination
+From Colombo
+Take Colombo-Kandy highway (A1) and take a left from Peradeniya to Peradeniya-Haloluwa-Katugastota road (B365). From Mawilmada, take B205 and from Madawala, turn right to B256 and reach Digana. From there, take Teldeniya road (A26) and travel up to Ududumbara. Turn left to Kalugala-Udadumbara road up to Dabagahapitiya bridge. Continue Pubudu Mawatha for 1km and turn left. Travel along this road to meet the village where the fall is situated.
+
+From Kandy
+From Kandy, reach Peradeniya and follow the above directions to reach your destination.</h5>
       <Button color="primary" onClick={() => navigate("/")}>
         Go back
       </Button>

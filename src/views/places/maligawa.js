@@ -13,19 +13,19 @@ import {
 
 const items = [
   {
-    src: require("assets/img/bg5.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States",
+    src: require("assets/img/tt1.jpg"),
+    altText: "Temple of Tooth , Kandy",
+    caption: "Temple of Tooth , Kandy",
   },
   {
-    src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States",
+    src: require("assets/img/tt2.jpg"),
+    altText: "Temple of Tooth , Kandy",
+    caption: "Temple of Tooth , Kandy",
   },
   {
-    src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States",
+    src: require("assets/img/tt3.jpg"),
+    altText: "Temple of Tooth , Kandy",
+    caption: "Temple of Tooth , Kandy",
   },
 ];
 
@@ -56,11 +56,11 @@ const Maligawa = () => {
 
   return (
     <>
-      <h3 style={{ color: "green" }}>Sri Dalada Maligawa </h3>
+     
       <Container>
         <div className="title">
           <h4 style={{ textAlign: "center", color: "greenyellow" }}>
-            Carousel
+          Sri Dalada Maligawa
           </h4>
         </div>
         <Row className="justify-content-center">
@@ -113,8 +113,8 @@ const Maligawa = () => {
           </Col>
         </Row>
       </Container>
-      <h5>
-        {" "}
+      <h5 style={{textAlign:"center", margin:10,padding:10}}>
+       
         The Sri Dalada Maligawa or The Temple of the Sacred Tooth Relic is a
         temple in the city of Kandy in Sri Lanka. It was built within the royal
         palace complex which houses the tooth relic of the Buddha, a tooth,

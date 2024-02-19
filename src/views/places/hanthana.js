@@ -12,19 +12,19 @@ import {
 
 const items = [
   {
-    src: require("assets/img/bg5.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States",
+    src: require("assets/img/H1.jpg"),
+    altText: "Hanthana Mountain Range",
+    caption: "Hanthana Mountain Range",
   },
   {
-    src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States",
+    src: require("assets/img/H2.jpg"),
+    altText: "Uragala",
+    caption: "Uragala",
   },
   {
-    src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States",
+    src: require("assets/img/H3.jpg"),
+    altText: "Alagalla",
+    caption: "Alagalla",
   },
 ];
 
@@ -55,11 +55,10 @@ const Hanthana = () => {
 
   return (
     <>
-      <h3 style={{ color: "green" }}>ADD NAME </h3>
       <Container>
         <div className="title">
           <h4 style={{ textAlign: "center", color: "greenyellow" }}>
-            Carousel
+          Hanthana Mountain Range
           </h4>
         </div>
         <Row className="justify-content-center">
@@ -112,8 +111,14 @@ const Hanthana = () => {
           </Col>
         </Row>
       </Container>
-      <h5> add descriptaion</h5>
-      <Button color="primary" onClick={() => navigate("/")}>
+      <h5> The Hanthana Mountain Range is located in the central province of Sri Lanka. It consists of seven peaks. The height of the highest peak in the range is 3800 ft. The highest peak is named as “Uura Kanda”.
+
+Hanthana is a favorite travel spot for many people because it is exciting and thrilling to explore. You can reach the foot of the mountain range by the Peradeniya-Galaha road or the Kandy-Udawela road.
+
+The mountain range, which is most often hidden by mist, is a favorite place by local university students who address the peak by the name Adara Kanda (mountain of love). Since the Peradeniya university is close by, all year around university students make it a point to visit this mountain range.
+
+One of the best places to visit while trekking through the hills of Hanthana is the Hanthana viharaya, which was built during the time of the Kandyan Kingdom. It s located 10 km away from Kandy City and on the highest elevation in Kandy.</h5>
+         <Button color="primary" onClick={() => navigate("/")}>
         Go back
       </Button>
     </>

@@ -12,19 +12,19 @@ import {
 
 const items = [
   {
-    src: require("assets/img/bg5.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States",
+    src: require("assets/img/k1.jpg"),
+    altText: "Arthur’s Seat, Kandy",
+    caption: "Arthur’s Seat, Kandy",
   },
   {
-    src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States",
+    src: require("assets/img/k2.jpg"),
+    altText: "Arthur’s Seat, Kandy",
+    caption: "Arthur’s Seat, Kandy",
   },
   {
-    src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States",
+    src: require("assets/img/k3.jpg"),
+    altText: "Arthur’s Seat, Kandy",
+    caption: "Arthur’s Seat, Kandy",
   },
 ];
 
@@ -55,13 +55,10 @@ const ViewPoint = () => {
 
   return (
     <>
-      <h3 style={{ color: "green" }}>
-        Kandy View Point (Arthur’s Seat, Kandy){" "}
-      </h3>
       <Container>
         <div className="title">
           <h4 style={{ textAlign: "center", color: "greenyellow" }}>
-            Carousel
+          Kandy View Point (Arthur’s Seat, Kandy)
           </h4>
         </div>
         <Row className="justify-content-center">
@@ -114,7 +111,17 @@ const ViewPoint = () => {
           </Col>
         </Row>
       </Container>
-      <h5> add descriptaion</h5>
+      <h5> The mesmerizing view point is located on the Rajapihilla Mawatha and is ranked 5th out of 105 tourist attractions in Kandy. The place is located near the Kandy Lake and is enclosed in breathtaking landscapes of mountains and meadows. From the city, you have to take the Rajapihilla Mawatha Route, after which a 1 km steep climb will guide you to the view point. You can also hire a tuk-tuk to reach the top.The panoramic view that you would get to see is worth the pain of the ascent. The entire Kandy town lies ahead of your eye, and from the top, you can also spot the Kandy lake and Dalada Maligawa.
+
+The mesmerizing view point is located on the Rajapihilla Mawatha and is ranked 5th out of 105 tourist attractions in Kandy. The place is located near the Kandy Lake and is enclosed in breathtaking landscapes of mountains and meadows. From the city, you have to take the Rajapihilla Mawatha Route, after which a 1 km steep climb will guide you to the view point.
+
+You can also hire a tuk-tuk to reach the top.The panoramic view that you would get to see is worth the pain of the ascent. The entire Kandy town lies ahead of your eye, and from the top, you can also spot the Kandy lake and Dalada Maligawa.
+
+Highlights: Panoramic view of the city, souvenir shops, art galleries
+
+Location: Rajapihilla Mawatha, Kandy
+
+Timings: Anytime during the day.</h5>
       <Button color="primary" onClick={() => navigate("/")}>
         Go back
       </Button>

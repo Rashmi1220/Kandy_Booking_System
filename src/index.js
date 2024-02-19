@@ -20,6 +20,9 @@ import Yahangala from "views/places/Yahangala";
 import Hanthana from "views/places/hanthana";
 import Ambuluwawa from "views/places/ambuluwawa";
 import SignUp from "views/index-sections/SignUp";
+import Udawaththakale from "views/places/udawaththaKale";
+import Peradeniyacampus from "views/places/peradeniyaCampus";
+import Bellwood from "views/places/BellWood";
 // import ProfilePage from "views/examples/ProfilePage.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -37,6 +40,9 @@ root.render(
       <Route exact path="/yahangala" element={<Yahangala />} />
       <Route exact path="/hanthana" element={<Hanthana />} />
       <Route exact path="/ambuluwawa" element={<Ambuluwawa />} />
+      <Route exact path="/udawaththakale" element={<Udawaththakale />} />
+      <Route exact path="/peradeniyacampus" element={<Peradeniyacampus />} />
+      <Route exact path="/Bellwood" element={<Bellwood />} />
       <Route path="/signUp" element={<SignUp />} />
       {/* <Route path="/nucleo-icons" element={<NucleoIcons />} /> */}
       {/* <Route path="/landing-page" element={<LandingPage />} /> */}

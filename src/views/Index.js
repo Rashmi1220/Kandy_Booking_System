@@ -13,7 +13,7 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 //
 import Places from "./index-sections/Places.js";
 
-import Tabs from "./index-sections/Tabs.js";
+
 
 import Carousel from "./index-sections/Carousel.js";
 
@@ -41,7 +41,7 @@ function Index() {
         <IndexHeader />
         <div className="main">
           <Places />
-          <Tabs />
+         
           <Carousel />
           <CompleteExamples />
           {/* <SignUp /> */}

@@ -24,7 +24,7 @@ function IndexHeader() {
 
   return (
     <>
-      <div className="page-header clear-filter" filter-color="blue" id="home">
+      <div className="page-header clear-filter"  id="home">
         <div
           className="page-header-image"
           style={{
@@ -34,11 +34,11 @@ function IndexHeader() {
         ></div>
         <Container>
           <div className="content-center brand">
-            <img
+            {/* <img
               alt="..."
               className="n-logo"
               src={require("assets/img/now-logo.png")}
-            ></img>
+            ></img> */}
             <h1 className="h1-seo">Discover story-worthy travel moments</h1>
             <h3>Make memories on your next trip</h3>
           </div>

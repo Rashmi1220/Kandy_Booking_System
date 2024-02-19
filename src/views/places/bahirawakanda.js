@@ -13,19 +13,19 @@ import {
 
 const items = [
   {
-    src: require("assets/img/bg5.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States",
+    src: require("assets/img/b1.jpg"),
+    altText: "Bahirawakanda Temple",
+    caption: "Bahirawakanda Temple",
   },
   {
-    src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States",
+    src: require("assets/img/b2.jpg"),
+    altText: "Bahirawakanda Temple",
+    caption: "Bahirawakanda Temple",
   },
   {
-    src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States",
+    src: require("assets/img/b3.jpg"),
+    altText: "Bahirawakanda Temple",
+    caption: "Bahirawakanda Temple",
   },
 ];
 
@@ -56,12 +56,11 @@ const Bahiravakanda = () => {
 
   return (
     <>
-      <h3 style={{ color: "green" }}>Bahirawakanda Temple </h3>
 
       <Container>
         <div className="title">
           <h4 style={{ textAlign: "center", color: "greenyellow" }}>
-            Carousel
+          Bahirawakanda Temple
           </h4>
         </div>
         <Row className="justify-content-center">

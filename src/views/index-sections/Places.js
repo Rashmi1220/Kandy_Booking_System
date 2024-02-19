@@ -210,6 +210,60 @@ function Places() {
             </CardBody>
           </Card>
 
+          <Card style={{ width: "20rem", margin: "25px" }}>
+            <CardImg
+              alt="..."
+              className="img-raised"
+              src={require("assets/img/55.jpg")}
+            ></CardImg>
+            <CardBody>
+              <CardTitle tag="h4">Udawaththa Kale</CardTitle>
+              <CardText>
+              Udawattakele Forest Reserve often spelled as Udawatta Kele, is a historic forest reserve on a hill-ridge in the city of Kandy. It is 104 hectares large. During the days of the Kandyan kingdom, 
+              Udawattakele was known as "Uda Wasala Watta" in Sinhalese meaning "the garden above the royal palace".
+              </CardText>
+              <Button color="primary" onClick={() => navigate("/udawaththakale")}>
+                Read More
+              </Button>
+            </CardBody>
+          </Card>
+
+          <Card style={{ width: "20rem", margin: "25px" }}>
+            <CardImg
+              alt="..."
+              className="img-raised"
+              src={require("assets/img/76.jpg")}
+            ></CardImg>
+            <CardBody>
+              <CardTitle tag="h4">Peradeniya Campus</CardTitle>
+              <CardText>
+              The University covers about 700 hectares of land and the developed area covering approximately 130 hectares is occupied by buildings of the Faculties, Halls of Residence, Staff bungalows etc. 
+              Throughout the campus most trees begin to bear flowers in early March signaling the coming of spring.
+              </CardText>
+              <Button color="primary" onClick={() => navigate("/peradeniyacampus")}>
+                Read More
+              </Button>
+            </CardBody>
+          </Card>
+
+          <Card style={{ width: "20rem", margin: "25px" }}>
+            <CardImg
+              alt="..."
+              className="img-raised"
+              src={require("assets/img/33.jpg")}
+            ></CardImg>
+            <CardBody>
+              <CardTitle tag="h4">Bellwood</CardTitle>
+              <CardText>
+              This magnificent scenic spot is not far from the Kandy city limits and you can easily reach the place from Kandy city via Ampitiya town to Talatuoya and then to Bellwood area. 
+              This place is considered a camping ground and if you camp overnight near Muthu Kelina lake make sure to watch the sunrise.
+              </CardText>
+              <Button color="primary" onClick={() => navigate("/bellwood")}>
+                Read More
+              </Button>
+            </CardBody>
+          </Card>
+
           {/* </Col> */}
         </Container>
       </div>

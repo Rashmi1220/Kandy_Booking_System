@@ -12,19 +12,19 @@ import {
 
 const items = [
   {
-    src: require("assets/img/bg5.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States",
+    src: require("assets/img/y1.jpg"),
+    altText: "Yahangala Mountain",
+    caption: "Yahangala Mountain",
   },
   {
-    src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States",
+    src: require("assets/img/y2.jpg"),
+    altText: "Yahangala Mountain",
+    caption: "Yahangala Mountain",
   },
   {
-    src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States",
+    src: require("assets/img/y3.jpg"),
+    altText: "Yahangala Mountain",
+    caption: "Yahangala Mountain",
   },
 ];
 
@@ -55,11 +55,10 @@ const Yahangala = () => {
 
   return (
     <>
-      <h3 style={{ color: "green" }}>ADD NAME </h3>
       <Container>
         <div className="title">
           <h4 style={{ textAlign: "center", color: "greenyellow" }}>
-            Carousel
+          Yahangala Mountain
           </h4>
         </div>
         <Row className="justify-content-center">
@@ -112,7 +111,53 @@ const Yahangala = () => {
           </Col>
         </Row>
       </Container>
-      <h5> add descriptaion</h5>
+      <h5> Yahangala is located in the Udailuka Grama Sevaka Division of a beautiful village called Kalugala. As part of the Knuckles Reserve, the original owner of this yahangala is the Forest Department. A wonderful place full of beauty that belongs to the Knuckles Mountains. This is called Yahangala as it is situated like a bed. Yahangala is located southeast of Knuckles. There is a legend of Ravana in this too. It is believed that King Ravana hid Goddess Sita on this mountain.
+
+The upper part of the Yahangala rock is about two or three acres. Can go both ways and the whole mountain is an open area to the air. There was no fountain or tall tree, but broken pieces of rock could be seen everywhere.
+
+I'm not wrong to say that climbing Yahangala is a mountaineer's dream not only because of the thrill of it, but also because of the unforgettable night that can be spent upstairs and the beautiful scenery that can be seen in the early morning sun and 360 degrees.
+
+History of Yahangala
+Further legend about Yahangala is that it is believed that King Ravana's unconscious body was buried in Yahangala. As the battle of Rama Ravana took place between Lakegala and Rahassa, it can be assumed that the body of King Ravana was buried inside Yahangala. Because Yahangala literally means a mountain that can be clearly seen in the distance as a bed.
+
+Yahangala is most famous with King Rawana. Most of them are the place where the unconscious body of King Ravana is buried.
+
+According to the legends, the body of King Rawana is buried in this rock.
+
+It is also a well known fact that lightning strikes Yahangala.
+
+Route:
+From Colombo you can take the Mahiyangaya Road from Colombo to Ududumbara (Kalugala) and Yahangala
+Kandy -- Madawala -- Theldeniya -- Hunnasgiriya -- Kalugala -- Yahangala (60KM)
+Travel Time: Form Kandy 1.5 hrs
+
+Height : 1300m
+
+Transport:
+Bike
+Taxi
+Public Transport
+Special remark:
+The scenery is breathtaking for those who climb Yahangala, especially as there is not even a stream to carry enough water for the climbers.
+There is a village opinion that if you do not cross the Yahangala without drinking alcohol, you will get into various troubles.
+Because there are several hills and slopes, it is advisable to climb the group together with great care.
+Yahangala Tharana is a hike with extreme bitterness and amazing beauty
+The special thing is for those who are wandering and drinking and traveling. Don't go here
+Leaving only the footprints Come on
+Take bottles of water
+Use leech Repellent
+Wear attire suitable for protection against thorns
+Get a guide if possible
+Ask directions from locals
+Don’t disturb wild life
+Famous for:
+Hiking
+Camping
+Nature Exploring
+Photography
+Sightseeing
+Trekking
+Weather</h5>
       <Button color="primary" onClick={() => navigate("/")}>
         Go back
       </Button>

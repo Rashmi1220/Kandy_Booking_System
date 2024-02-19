@@ -12,19 +12,19 @@ import {
 
 const items = [
   {
-    src: require("assets/img/bg5.jpg"),
-    altText: "Nature, United States",
-    caption: "Nature, United States",
+    src: require("assets/img/p1.jpg"),
+    altText: "Peradeniya Botanical Garden",
+    caption: "Peradeniya Botanical Garden",
   },
   {
-    src: require("assets/img/bg3.jpg"),
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States",
+    src: require("assets/img/p2.jpg"),
+    altText: "Peradeniya Botanical Garden",
+    caption: "Peradeniya Botanical Garden",
   },
   {
-    src: require("assets/img/bg4.jpg"),
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States",
+    src: require("assets/img/p3.jpg"),
+    altText: "Peradeniya Botanical Garden",
+    caption: "Peradeniya Botanical Garden",
   },
 ];
 
@@ -55,12 +55,11 @@ const Garden = () => {
 
   return (
     <>
-      <h3 style={{ color: "green" }}>Peradeniya Botanical Garden </h3>
 
       <Container>
         <div className="title">
           <h4 style={{ textAlign: "center", color: "greenyellow" }}>
-            Carousel
+          Peradeniya Botanical Garden
           </h4>
         </div>
         <Row className="justify-content-center">

@@ -68,7 +68,7 @@ function IndexNavbar() {
                     document.getElementById("home").scrollIntoView();
                   }}
                 >
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <i className="objects_diamond"></i>
                   <p>HOME</p>
                 </NavLink>
               </NavItem>
@@ -79,7 +79,7 @@ function IndexNavbar() {
                     document.getElementById("places").scrollIntoView();
                   }}
                 >
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <i className=""></i>
                   <p>Places</p>
                 </NavLink>
               </NavItem>
@@ -90,7 +90,7 @@ function IndexNavbar() {
                     document.getElementById("about").scrollIntoView();
                   }}
                 >
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <i className=""></i>
                   <p>About</p>
                 </NavLink>
               </NavItem>
@@ -109,7 +109,7 @@ function IndexNavbar() {
 
               <NavItem>
                 <NavLink
-                  href="https://twitter.com/CreativeTim?ref=creativetim"
+                  href=""
                   target="_blank"
                   id="twitter-tooltip"
                 >
@@ -122,7 +122,7 @@ function IndexNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
+                  href=""
                   target="_blank"
                   id="facebook-tooltip"
                 >
@@ -135,7 +135,7 @@ function IndexNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+                  href=""
                   target="_blank"
                   id="instagram-tooltip"
                 >

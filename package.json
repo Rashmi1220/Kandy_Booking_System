@@ -1,8 +1,8 @@
 {
-  "name": "now-ui-kit-react",
+  "name": "Kandy Travel Guider",
   "version": "1.5.2",
   "private": true,
-  "dependencies": {
+  "dependencienow-ui-kit-reacts": {
     "moment": "2.29.4",
     "nouislider": "15.4.0",
     "react": ">=16.8.0",
