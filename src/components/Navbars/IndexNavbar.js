@@ -53,7 +53,9 @@ function IndexNavbar() {
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} expand="lg" color="info">
         <Container>
-          <div className="navbar-translate">Kandy Explore</div>
+          <div className="navbar-translate">
+            
+          </div>
           <Collapse
             className="justify-content-end"
             isOpen={collapseOpen}
