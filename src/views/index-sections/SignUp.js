@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// reactstrap components
+import axios from "axios";
 import {
   Button,
   Card,
@@ -9,6 +9,7 @@ import {
   CardFooter,
   CardTitle,
   Form,
+  FormGroup,
   Input,
   InputGroupAddon,
   InputGroupText,
@@ -17,65 +18,49 @@ import {
   Row
 } from "reactstrap";
 
-// core components
-
 function SignUp() {
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
-  const [emailFocus, setEmailFocus] = React.useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    organization: "",
+    phoneNumber: "",
+    location: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Send form data to the backend
+      await axios.post("/signup", formData);
+      // Redirect to login page upon successful sign-up
+      window.location.href = "/login";
+    } catch (err) {
+      console.error("Error:", err.response.data);
+      // Handle error (e.g., show error message)
+    }
+  };
+
   return (
-    <>
-      <div
-        className="section section-signup"
-        style={{
-          backgroundImage: "url(" + require("assets/img/bg11.jpg") + ")",
-          backgroundSize: "cover",
-          backgroundPosition: "top center",
-          minHeight: "700px"
-        }}
-      >
-        <Container>
-          <Row>
-            <Card className="card-signup" data-background-color="blue">
-              <Form action="" className="form" method="">
-                <CardHeader className="text-center">
-                  <CardTitle className="title-up" tag="h3">
-                    Sign Up
-                  </CardTitle>
-                  <div className="social-line">
-                    <Button
-                      className="btn-neutral btn-icon btn-round"
-                      color="facebook"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-facebook-square"></i>
-                    </Button>
-                    <Button
-                      className="btn-neutral btn-icon btn-round"
-                      color="twitter"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                    <Button
-                      className="btn-neutral btn-icon btn-round"
-                      color="google"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-google-plus"></i>
-                    </Button>
-                  </div>
-                </CardHeader>
-                <CardBody>
-                  <InputGroup
-                    className={
-                      "no-border" + (firstFocus ? " input-group-focus" : "")
-                    }
-                  >
+    <div className="section section-signup">
+      <Container>
+        <Row>
+          <Card className="card-signup" data-background-color="blue">
+            <Form className="form" onSubmit={handleSubmit}>
+              <CardHeader className="text-center">
+                <CardTitle className="title-up" tag="h3">
+                  Sign Up
+                </CardTitle>
+              </CardHeader>
+              <CardBody>
+                <FormGroup>
+                  <InputGroup>
                     <InputGroupAddon addonType="prepend">
                       <InputGroupText>
                         <i className="now-ui-icons users_circle-08"></i>
@@ -84,15 +69,15 @@ function SignUp() {
                     <Input
                       placeholder="First Name..."
                       type="text"
-                      onFocus={() => setFirstFocus(true)}
-                      onBlur={() => setFirstFocus(false)}
-                    ></Input>
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                    />
                   </InputGroup>
-                  <InputGroup
-                    className={
-                      "no-border" + (lastFocus ? " input-group-focus" : "")
-                    }
-                  >
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup>
                     <InputGroupAddon addonType="prepend">
                       <InputGroupText>
                         <i className="now-ui-icons text_caps-small"></i>
@@ -101,15 +86,15 @@ function SignUp() {
                     <Input
                       placeholder="Last Name..."
                       type="text"
-                      onFocus={() => setLastFocus(true)}
-                      onBlur={() => setLastFocus(false)}
-                    ></Input>
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                    />
                   </InputGroup>
-                  <InputGroup
-                    className={
-                      "no-border" + (emailFocus ? " input-group-focus" : "")
-                    }
-                  >
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup>
                     <InputGroupAddon addonType="prepend">
                       <InputGroupText>
                         <i className="now-ui-icons ui-1_email-85"></i>
@@ -117,31 +102,119 @@ function SignUp() {
                     </InputGroupAddon>
                     <Input
                       placeholder="Email..."
-                      type="text"
-                      onFocus={() => setEmailFocus(true)}
-                      onBlur={() => setEmailFocus(false)}
-                    ></Input>
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
                   </InputGroup>
-                </CardBody>
-                <CardFooter className="text-center">
-                  <Button
-                    className="btn-neutral btn-round"
-                    color="info"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    size="lg"
-                  >
-                    Get Started
-                  </Button>
-                </CardFooter>
-              </Form>
-            </Card>
-          </Row>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="now-ui-icons ui-1_lock-circle-open"></i>
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input
+                      placeholder="Password..."
+                      type="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      required
+                    />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="now-ui-icons ui-1_lock-circle-open"></i>
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input
+                      placeholder="Confirm Password..."
+                      type="password"
+                      name="confirmPassword"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      required
+                    />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="now-ui-icons business_bank"></i>
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input
+                      placeholder="Organization..."
+                      type="text"
+                      name="organization"
+                      value={formData.organization}
+                      onChange={handleChange}
+                      required
+                    />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="now-ui-icons tech_mobile"></i>
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input
+                      placeholder="Phone Number..."
+                      type="tel"
+                      name="phoneNumber"
+                      value={formData.phoneNumber}
+                      onChange={handleChange}
+                      required
+                    />
+                  </InputGroup>
+                </FormGroup>
+                <FormGroup>
+                  <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="now-ui-icons location_pin"></i>
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input
+                      placeholder="Location..."
+                      type="text"
+                      name="location"
+                      value={formData.location}
+                      onChange={handleChange}
+                      required
+                    />
+                  </InputGroup>
+                </FormGroup>
+              </CardBody>
+              <CardFooter className="text-center">
+                <Button
+                  className="btn-neutral btn-round"
+                  color="info"
+                  size="lg"
+                  type="submit"
+                >
+                  Get Started
+                </Button>
+              </CardFooter>
+            </Form>
+          </Card>
+        </Row>
+        {/* <Row className="justify-content-center">
           <div className="col text-center">
             <Button
               className="btn-round btn-white"
               color="default"
-              to="/login-page"
+              to="/login"
               outline
               size="lg"
               tag={Link}
@@ -149,9 +222,9 @@ function SignUp() {
               View Login Page
             </Button>
           </div>
-        </Container>
-      </div>
-    </>
+        </Row> */}
+      </Container>
+    </div>
   );
 }
 
