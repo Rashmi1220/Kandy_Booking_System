@@ -100,12 +100,12 @@ function IndexNavbar() {
               <NavItem>
                 <NavLink
                   onClick={(e) => {
-                    navigate("/signUp");
+                    navigate("/login");
                     e.preventDefault();
                   }}
                 >
                   <i className="now-ui-icons arrows-1_cloud-download-93"></i>
-                  <p>SignUp</p>
+                  <p>Login</p>
                 </NavLink>
               </NavItem>
 

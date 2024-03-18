@@ -23,6 +23,8 @@ import SignUp from "views/index-sections/SignUp";
 import Udawaththakale from "views/places/udawaththaKale";
 import Peradeniyacampus from "views/places/peradeniyaCampus";
 import Bellwood from "views/places/BellWood";
+import Login from "views/index-sections/Login";
+import ProfilePage from "views/examples/ProfilePage";
 // import ProfilePage from "views/examples/ProfilePage.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -44,6 +46,8 @@ root.render(
       <Route exact path="/peradeniyacampus" element={<Peradeniyacampus />} />
       <Route exact path="/Bellwood" element={<Bellwood />} />
       <Route path="/signUp" element={<SignUp />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/profilePage" element={<ProfilePage />} />
       {/* <Route path="/nucleo-icons" element={<NucleoIcons />} /> */}
       {/* <Route path="/landing-page" element={<LandingPage />} /> */}
       {/* <Route path="/profile-page" element={<ProfilePage />} /> */}
