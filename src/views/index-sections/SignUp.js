@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { auth } from "firebase.config"; // Ensure this path is correct
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"; // Import required functions from firebase/auth
 import {
   Button,
   Card,
@@ -30,19 +31,33 @@ function SignUp() {
     location: ""
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
     try {
-      // Send form data to the backend
-      await axios.post("/signup", formData);
+      // Create user with email and password
+      const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
+      const user = userCredential.user;
+
+      // Optionally update user profile
+      await updateProfile(user, {
+        displayName: `${formData.firstName} ${formData.lastName}`
+      });
+
       // Redirect to login page upon successful sign-up
-      window.location.href = "/login";
+      navigate("/login");
     } catch (err) {
-      console.error("Error:", err.response.data);
+      console.error("Error:", err.message);
       // Handle error (e.g., show error message)
     }
   };
@@ -209,20 +224,6 @@ function SignUp() {
             </Form>
           </Card>
         </Row>
-        {/* <Row className="justify-content-center">
-          <div className="col text-center">
-            <Button
-              className="btn-round btn-white"
-              color="default"
-              to="/login"
-              outline
-              size="lg"
-              tag={Link}
-            >
-              View Login Page
-            </Button>
-          </div>
-        </Row> */}
       </Container>
     </div>
   );

@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth"; // Import getAuth for Firebase Authentication
 import { collection, getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -24,11 +25,9 @@ const firebaseConfig = {
   appId: REACT_APP_FIREBASE_APP_ID
 };
 
-
-
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app); // Correctly initialize auth
 export const storage = getStorage(app);
 export const db = getFirestore(app);
 export const collectionRef = collection(db, "articles");

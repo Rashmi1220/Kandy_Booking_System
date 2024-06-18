@@ -1,6 +1,8 @@
 import React from "react";
 import { Button, Card, CardHeader, CardBody, CardFooter, CardTitle, Form, Input, InputGroupAddon, InputGroupText, InputGroup, Container, Row } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import { auth } from "firebase.config"; // Ensure this path is correct
+import { signInWithEmailAndPassword } from "firebase/auth"; // Import signInWithEmailAndPassword from firebase/auth
 
 function Login() {
   const [email, setEmail] = React.useState("");
@@ -15,13 +17,17 @@ function Login() {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Handle form submission (e.g., login request)
-    console.log("Email:", email);
-    console.log("Password:", password);
-    // Redirect to a different route after successful login
-    navigate("/dashboard"); // Change "/dashboard" to the appropriate route
+    try {
+      // Sign in with email and password
+      await signInWithEmailAndPassword(auth, email, password);
+      // Redirect to a different route after successful login
+      navigate("/profilePage"); // Change "/dashboard" to the appropriate route
+    } catch (err) {
+      console.error("Error:", err.message);
+      // Handle error (e.g., show error message)
+    }
   };
 
   return (
@@ -49,15 +55,14 @@ function Login() {
                   </InputGroup>
                 </CardBody>
                 <CardFooter className="text-center">
-                  <Button className="btn-neutral btn-round" color="info" type="submit"onClick={() => navigate("/profilePage")}>Submit</Button>
+                  <Button className="btn-neutral btn-round" color="info" type="submit">Submit</Button>
                   <br/>
-                  <Button  onClick={() => navigate("/signUp")}>Create Account</Button>
+                  <Button onClick={() => navigate("/signUp")}>Create Account</Button>
                 </CardFooter>
               </Form>
             </Card>
           </Row>
         </Container>
-    
       </div>
     </>
   );
