@@ -8,51 +8,25 @@ function DarkFooter() {
   return (
     <footer className="footer" data-background-color="black">
       <Container>
-        {/* <nav>
-          <ul>
-            <li>
-              <a
-                href=""
-                target="_blank"
-              >
-                Creative Tim
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                target="_blank"
-              >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href=""
-                target="_blank"
-              >
-                Blog
-              </a>
-            </li>
-          </ul>
-        </nav> */}
-        {/* <div className="copyright" id="copyright">
+        <nav>
+        </nav>
+        <div className="copyright" id="copyright">
           © {new Date().getFullYear()}, Designed by{" "}
           <a
             href=""
             target="_blank"
           >
-            Invision
+            Kandy Travel Guider
           </a>
           . Coded by{" "}
           <a
             href=""
             target="_blank"
           >
-            Creative Tim
+            Rashmi
           </a>
           .
-        </div> */}
+        </div>
       </Container>
     </footer>
   );
