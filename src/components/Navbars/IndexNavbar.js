@@ -42,6 +42,7 @@ function IndexNavbar() {
   });
   return (
     <>
+
       {collapseOpen ? (
         <div
           id="bodyClick"
@@ -50,18 +51,21 @@ function IndexNavbar() {
             setCollapseOpen(false);
           }}
         />
+
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} expand="lg" color="info">
         <Container>
           <div className="navbar-translate">
-            
+            <h4 style={{ color: "gold", fontFamily: "fantasy" }}>Kandy Travel Guider</h4>
           </div>
           <Collapse
             className="justify-content-end"
             isOpen={collapseOpen}
             navbar
           >
+
             <Nav navbar>
+
               <NavItem>
                 <NavLink
                   href="#pablo"
