@@ -105,8 +105,14 @@ function ProfilePage() {
           <NavbarBrand href="/"> <h4 style={{ color: "gold", fontFamily: "fantasy" }}>Kandy Travel Guider</h4> </NavbarBrand>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/admin-login">
-                <Button color="primary">Admin Login</Button>
+              <NavLink
+                onClick={(e) => {
+                  navigate("/adminLogin");
+                  e.preventDefault();
+                }}
+              >
+                <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                <p>Admin</p>
               </NavLink>
             </NavItem>
           </Nav>
