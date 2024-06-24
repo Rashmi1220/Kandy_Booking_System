@@ -4,12 +4,12 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import IndexHeader from "components/Headers/IndexHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
-import Places from "./index-sections/Places.js";
-import Carousel from "./index-sections/Carousel.js";
-import CompleteExamples from "./index-sections/CompleteExamples.js";
+import Places from "./home/Places.js";
+import Carousel from "./home/Carousel.js";
+import Information from "./home/Information.js";
 // import SignUp from "./index-sections/SignUp.js";
-import About from "./index-sections/About.js";
-import Map from "./index-sections/Map/Map.js";
+import About from "./home/About.js";
+import Map from "./home/Map/Map.js";
 
 function Index() {
   React.useEffect(() => {
@@ -33,7 +33,7 @@ function Index() {
           <Places />
 
           <Carousel />
-          <CompleteExamples />
+          <Information />
           {/* <SignUp /> */}
           <About />
         </div>

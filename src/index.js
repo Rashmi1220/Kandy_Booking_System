@@ -11,10 +11,10 @@ import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 import Index from "views/Index.js";
 
 
-import SignUp from "views/index-sections/SignUp";
-import Login from "views/index-sections/Login";
-import ProfilePage from "views/examples/ProfilePage";
-import DetailPage from "views/index-sections/DetailPage";
+import SignUp from "views/home/SignUp";
+import Login from "views/home/Login";
+import ProfilePage from "views/User/ProfilePage";
+import DetailPage from "views/home/DetailPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
