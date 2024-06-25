@@ -5,7 +5,7 @@ import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import IndexHeader from "components/Headers/IndexHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 import Places from "./home/Places.js";
-import Carousel from "./home/Carousel.js";
+import Slideshow from "./home/Slideshow.js";
 import Information from "./home/Information.js";
 // import SignUp from "./index-sections/SignUp.js";
 import About from "./home/About.js";
@@ -32,7 +32,7 @@ function Index() {
           <Map />
           <Places />
 
-          <Carousel />
+          <Slideshow />
           <Information />
           {/* <SignUp /> */}
           <About />

@@ -3,6 +3,7 @@ import { Button, Container, Carousel, CarouselItem, CarouselIndicators, Row, Col
 import { useNavigate, useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.config";
+import { BallTriangle } from 'react-loader-spinner'
 
 const DetailPage = () => {
   const { articleId } = useParams();
@@ -42,7 +43,21 @@ const DetailPage = () => {
     setActiveIndex(newIndex);
   };
 
-  if (!article) return <div>Loading...</div>;
+  if (!article) return <div>
+
+
+
+    ;<BallTriangle
+      height={100}
+      width={100}
+      radius={5}
+      color="#4fa94d"
+      ariaLabel="ball-triangle-loading"
+      wrapperStyle={{}}
+      wrapperClass=""
+      visible={true}
+    />
+  </div>;
 
   return (
     <Container>

@@ -10,17 +10,8 @@ import {
   NavLink,
   Container,
   Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  CardTitle,
   Form,
   Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Row,
   Alert
 } from "reactstrap";
 import { useNavigate } from "react-router-dom";
@@ -164,7 +155,7 @@ function ProfilePage() {
             <label htmlFor="imageUpload" style={{ display: "block", marginBottom: "5px" }}>Upload Image(s):</label>
             <Input
               type="file"
-              id="imageUpload" yy
+              id="imageUpload"
               name="imageUpload"
               accept="image/*"
               multiple

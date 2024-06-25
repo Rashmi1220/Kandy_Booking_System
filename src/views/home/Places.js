@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, Container, CardImg, CardBody, CardTitle, CardText, Card } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-import { collection, query, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase.config";
 
 function Places() {
@@ -15,8 +15,10 @@ function Places() {
       const articlesData = articlesSnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
+
       }));
       setArticles(articlesData);
+
     };
 
     fetchArticles();

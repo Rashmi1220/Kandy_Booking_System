@@ -8,14 +8,13 @@ import "assets/scss/now-ui-kit.scss?v=1.5.0";
 
 // pages for this kit
 import Index from "views/Index.js";
-
-
 import SignUp from "views/User/SignUp";
 import Login from "views/User/Login";
 import ProfilePage from "views/User/ProfilePage";
 import DetailPage from "views/home/DetailPage";
 import AdminLogin from "views/home/Admin/AdminLogin";
 import Dashboard from "views/home/Admin/Dashboard";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -29,6 +28,7 @@ root.render(
       <Route path="/adminLogin" element={<AdminLogin />} />
       <Route path="/profilePage" element={<ProfilePage />} />
       <Route path="/dashboard" element={<Dashboard />} />
+
 
       <Route path="*" element={<Navigate to="/index" replace />} />
     </Routes>
