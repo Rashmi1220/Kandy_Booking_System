@@ -13,7 +13,7 @@ import Login from "views/User/Login";
 import ProfilePage from "views/User/ProfilePage";
 import DetailPage from "views/home/DetailPage";
 import AdminLogin from "views/home/Admin/AdminLogin";
-import Dashboard from "views/home/Admin/Dashboard";
+import Dashboard from "views/home/Admin/Dashboard/Dashboard";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

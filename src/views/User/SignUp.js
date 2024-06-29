@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "firebase.config"; // Ensure this path is correct
+import { auth } from "firebase.config";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"; // Import required functions from firebase/auth
 import {
   Button,
@@ -16,7 +16,8 @@ import {
   InputGroupText,
   InputGroup,
   Container,
-  Row
+  Row,
+  Alert
 } from "reactstrap";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "firebase.config";
@@ -32,7 +33,8 @@ function SignUp() {
     phoneNumber: "",
     location: ""
   });
-
+  const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -41,12 +43,51 @@ function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+
+    // Input validations
+    if (!formData.firstName) {
+      setError("First Name is required.");
+      return;
+    }
+
+    if (!formData.lastName) {
+      setError("Last Name is required.");
+      return;
+    }
+
+    if (!formData.email) {
+      setError("Email is required.");
+      return;
+    }
+
+    if (!formData.password) {
+      setError("Password is required.");
+      return;
+    }
+
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
+      setError("Passwords do not match!");
+      return;
+    }
+
+    if (!formData.organization) {
+      setError("Organization is required.");
+      return;
+    }
+
+    if (!formData.phoneNumber) {
+      setError("Phone Number is required.");
+      return;
+    }
+
+    if (!formData.location) {
+      setError("Location is required.");
       return;
     }
 
     try {
+      setUploading(true);
       // Create user with email and password
       const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       const user = userCredential.user;
@@ -65,11 +106,14 @@ function SignUp() {
       await updateProfile(user, {
         displayName: `${formData.firstName} ${formData.lastName}`
       });
+
       // Redirect to login page upon successful sign-up
       navigate("/login");
     } catch (err) {
       console.error("Error:", err.message);
-      // Handle error (e.g., show error message)
+      setError(`Error: ${err.message}`);
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -85,6 +129,11 @@ function SignUp() {
                 </CardTitle>
               </CardHeader>
               <CardBody>
+                {error && (
+                  <Alert color="danger">
+                    {error}
+                  </Alert>
+                )}
                 <FormGroup>
                   <InputGroup>
                     <InputGroupAddon addonType="prepend">
@@ -228,8 +277,10 @@ function SignUp() {
                   color="info"
                   size="lg"
                   type="submit"
+                  disabled={uploading}
+                  style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "10px 20px", fontSize: "16px", borderRadius: "5px", cursor: "pointer" }}
                 >
-                  Get Started
+                  {uploading ? "Uploading..." : "Get Started"}
                 </Button>
               </CardFooter>
             </Form>
