@@ -18,6 +18,8 @@ import {
   Container,
   Row
 } from "reactstrap";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "firebase.config";
 
 function SignUp() {
   const [formData, setFormData] = useState({
@@ -49,11 +51,20 @@ function SignUp() {
       const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       const user = userCredential.user;
 
+      await setDoc(doc(db, "users", user.uid), {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        organization: formData.organization,
+        phoneNumber: formData.phoneNumber,
+        location: formData.location,
+        uid: user.uid
+      });
+
       // Optionally update user profile
       await updateProfile(user, {
         displayName: `${formData.firstName} ${formData.lastName}`
       });
-
       // Redirect to login page upon successful sign-up
       navigate("/login");
     } catch (err) {

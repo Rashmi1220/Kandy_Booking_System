@@ -64,6 +64,7 @@ const DetailPage = () => {
       <div className="title">
         <h4 style={{ textAlign: "center", color: "greenyellow" }}>{article.articleTitle}</h4>
       </div>
+
       <Row className="justify-content-center">
         <Col lg="8" md="12">
           <Carousel activeIndex={activeIndex} next={next} previous={previous}>
@@ -85,6 +86,7 @@ const DetailPage = () => {
           </Carousel>
         </Col>
       </Row>
+      {article?.location && <a href={article?.location} target='_blank'>go to location</a>}
       <h5 style={{ textAlign: "center", margin: 10, padding: 10 }}>{article.articleContent}</h5>
       <Button color="primary" href="#pablo" onClick={() => navigate("/")}>
         Go back

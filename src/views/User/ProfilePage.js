@@ -24,6 +24,7 @@ function ProfilePage() {
     articleTitle: "",
     articleContent: "",
     caption: "",
+    location: ""
   });
   const [error, setError] = useState("");
 
@@ -67,6 +68,7 @@ function ProfilePage() {
         articleTitle: "",
         articleContent: "",
         caption: "",
+        location: ""
       });
     } catch (error) {
       console.error("Error uploading images or submitting data:", error);
@@ -137,6 +139,19 @@ function ProfilePage() {
               placeholder="Write your article here"
               required
             ></textarea>
+          </div>
+          <div style={{ marginBottom: "15px" }}>
+            <label htmlFor="location" style={{ display: "block", marginBottom: "5px" }}>Location:</label>
+            <Input
+              type="text"
+              id="location"
+              name="location"
+              value={formData.location}
+              onChange={handleInputChange}
+              style={{ width: "100%", padding: "10px", fontSize: "16px", border: "1px solid #ccc", borderRadius: "5px" }}
+              placeholder="Enter location link"
+              required
+            />
           </div>
           <div style={{ marginBottom: "15px" }}>
             <label htmlFor="caption" style={{ display: "block", marginBottom: "5px" }}>Caption:</label>
