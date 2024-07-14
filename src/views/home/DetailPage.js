@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Container, Carousel, CarouselItem, CarouselIndicators, Row, Col } from "reactstrap";
+import { Button, Container, Carousel, CarouselItem, CarouselIndicators, Row, Col, Card } from "reactstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase.config";
@@ -61,8 +61,9 @@ const DetailPage = () => {
 
   return (
     <Container>
+      <Card>
       <div className="title">
-        <h4 style={{ textAlign: "center", color: "greenyellow" }}>{article.articleTitle}</h4>
+        <h4 style={{ textAlign: "center", color: "black" }}><b>{article.articleTitle}</b></h4>
       </div>
 
       <Row className="justify-content-center">
@@ -86,11 +87,21 @@ const DetailPage = () => {
           </Carousel>
         </Col>
       </Row>
-      {article?.location && <a href={article?.location} target='_blank'>go to location</a>}
       <h5 style={{ textAlign: "center", margin: 10, padding: 10 }}>{article.articleContent}</h5>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
+  <Button color="Blue">
+    {article?.location && 
+      <a href={article?.location} target='_blank' style={{ textAlign: "center", margin: 1, padding: 1, color:"white"}}>
+        Go to location
+      </a>
+    }
+  </Button>
+</div>
+
       <Button color="primary" href="#pablo" onClick={() => navigate("/")}>
         Go back
       </Button>
+      </Card>
     </Container>
   );
 };

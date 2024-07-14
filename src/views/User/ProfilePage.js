@@ -57,7 +57,7 @@ function ProfilePage() {
         imageUrls.push(url);
       }
 
-      const formDataWithImages = { ...formData, imageUrls };
+      const formDataWithImages = { ...formData, imageUrls, status: "pending" };
 
       await addDoc(collectionRef, formDataWithImages);
 
