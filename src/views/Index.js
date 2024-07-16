@@ -10,6 +10,7 @@ import Information from "./home/Information.js";
 // import SignUp from "./index-sections/SignUp.js";
 import About from "./home/About.js";
 import Map from "./home/Map/Map.js";
+import Info from "./home/info.js";
 
 function Index() {
   React.useEffect(() => {
@@ -29,7 +30,8 @@ function Index() {
       <div className="wrapper">
         <IndexHeader />
         <div className="main">
-          <Map />
+          <Info/>
+          {/* <Map /> */}
           <Places />
 
           <Slideshow />
