@@ -47,7 +47,7 @@ function IndexNavbar() {
         />
 
       ) : null}
-      <Navbar className={"fixed-top " + navbarColor} expand="lg" color="info">
+      <Navbar className={"fixed-top " + navbarColor} expand="lg" color="white">
         <Container>
           <div className="navbar-translate">
             <h4 style={{ color: "gold", fontFamily: "fantasy" }}>Kandy Travel Guider</h4>
