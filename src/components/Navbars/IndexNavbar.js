@@ -50,7 +50,7 @@ function IndexNavbar() {
       <Navbar className={"fixed-top " + navbarColor} expand="lg" color="white">
         <Container>
           <div className="navbar-translate">
-            <h4 style={{ color: "gold", fontFamily: "fantasy" }}>Kandy Travel Guider</h4>
+            <h3 style={{ color: "gold", fontFamily: "fantasy" }}>Kandy Travel Guider</h3>
           </div>
           <Collapse
             className="justify-content-end"
@@ -98,11 +98,25 @@ function IndexNavbar() {
               <NavItem>
                 <NavLink
                   onClick={(e) => {
+                    navigate("/map");
+                    e.preventDefault();
+                  }}
+                >
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
+                       {/* <i class="fa fa-map-marker" aria-hidden="true"></i> */}
+                  <p>Map</p>
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink
+                  onClick={(e) => {
                     navigate("/login");
                     e.preventDefault();
                   }}
                 >
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                {/* <i class="fa fa-sign-in" aria-hidden="true"></i> */}
+             
                   <p>Login</p>
                 </NavLink>
               </NavItem>

@@ -11,6 +11,7 @@ import Information from "./home/Information.js";
 import About from "./home/About.js";
 import Map from "./home/Map/Map.js";
 import Info from "./home/info.js";
+import Pic from "./home/pic.js";
 
 function Index() {
   React.useEffect(() => {
@@ -31,6 +32,7 @@ function Index() {
         <IndexHeader />
         <div className="main">
           <Info/>
+          <Pic/>
           {/* <Map /> */}
           <Places />
 

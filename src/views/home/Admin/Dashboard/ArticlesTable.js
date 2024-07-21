@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { db } from 'firebase.config';
 import { collection, deleteDoc, doc, getDocs, updateDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 
 const ArticlesTable = () => {
     const [articles, setArticles] = useState([]);
+    const navigate = useNavigate(); // Initialize useNavigate
 
     useEffect(() => {
         fetchArticles();
@@ -50,6 +52,9 @@ const ArticlesTable = () => {
         }
     };
 
+    const handleEdit = (articleId) => {
+        navigate(`/profilePage/${articleId}`); // Navigate to the profilePage with the article ID
+    };
     return (
         <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
@@ -121,6 +126,17 @@ const ArticlesTable = () => {
                                     }}
                                 >
                                     🗑️
+                                </button>
+                                <button
+                                    onClick={() => handleEdit(article.id)} // Add the edit button with click handler
+                                    style={{
+                                        backgroundColor: 'transparent',
+                                        border: 'none',
+                                        cursor: 'pointer',
+                                        color: '#007bff'
+                                    }}
+                                >
+                                    ✏️
                                 </button>
                             </td>
                         </tr>

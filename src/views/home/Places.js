@@ -28,11 +28,11 @@ function Places() {
 
   return (
     <>
-      <div className="section section-tabs" id="places">
+      <div className="section section-tabs" id="places" style={{ backgroundColor:"#c0ecf0" }}>
         <Container>
           <h3 className="title">Places</h3>
           {articles.map((article) => (
-            <Card style={{ width: "20rem", margin: "25px" }} key={article.id}>
+            <Card style={{ width: "20rem", margin: "25px" , borderRadius: "30px", cursor: "pointer", transition: "1.1s"}} key={article.id}>
               <CardImg alt="..." className="img-raised" src={article.imageUrls[0]}></CardImg>
               <CardBody>
                 <CardTitle tag="h4">{article.articleTitle}</CardTitle>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { addDoc } from "firebase/firestore";
-import { collectionRef, storage } from "../../firebase.config";
+import { addDoc, collection, doc, getDoc, getDocs, query, updateDoc, where } from "firebase/firestore";
+import { collectionRef, db, storage } from "../../firebase.config";
 import {
   Navbar,
   NavbarBrand,
@@ -15,7 +15,7 @@ import {
   Alert,
   Card
 } from "reactstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ProfilePage() {
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -27,9 +27,42 @@ function ProfilePage() {
     caption: "",
     location: ""
   });
+  const [existingImages, setExistingImages] = useState([]);
   const [error, setError] = useState("");
+  const [isTitleUnique, setIsTitleUnique] = useState(true);
 
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  console.log(isTitleUnique)
+
+  useEffect(() => {
+    if (id) {
+      fetchArticleData();
+    }
+  }, [id]);
+
+  const fetchArticleData = async () => {
+    try {
+      const docRef = doc(db, "articles", id);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        const articleData = docSnap.data();
+        setFormData({
+          articleTitle: articleData.articleTitle,
+          articleContent: articleData.articleContent,
+          caption: articleData.caption,
+          location: articleData.location
+        });
+        setExistingImages(articleData.imageUrls || []);
+      } else {
+        console.error("No such document!");
+      }
+    } catch (error) {
+      console.error("Error fetching article data:", error);
+    }
+  };
 
   const handleFileChange = (event) => {
     const files = Array.from(event.target.files);
@@ -39,9 +72,43 @@ function ProfilePage() {
     setImagePreviews([...imagePreviews, ...previews]);
   };
 
+  const checkTitleUniqueness = async (title) => {
+    try {
+      const articlesCollection = collection(db, "articles"); // Correct usage of collection
+      const q = query(articlesCollection, where("articleTitle", "==", title));
+      const querySnapshot = await getDocs(q);
+
+      setIsTitleUnique(!querySnapshot.empty);
+      if(querySnapshot.empty){
+        setError("")
+      }else{ setError("This title is already in use. Please choose a unique title.");
+      }
+    } catch (error) {
+      console.error("Error checking title uniqueness:", error);
+      setIsTitleUnique(true); // Assume unique if error occurs
+      setError("This title is already in use. Please choose a unique title.");
+      
+    }
+  };
+
   const handleInputChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+    if (event.target.name === "articleTitle") {
+      checkTitleUniqueness(event.target.value);
+    }
   };
+
+  const handleRemoveImage = (index, isExisting) => {
+    
+    if (isExisting) {
+      setExistingImages(existingImages.filter((_, i) => i !== index));
+    } else {
+      setSelectedFiles(selectedFiles.filter((_, i) => i !== index));
+      setImagePreviews(imagePreviews.filter((_, i) => i !== index));
+    }
+  };
+
+
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -49,7 +116,7 @@ function ProfilePage() {
     setUploading(true);
 
     try {
-      const imageUrls = [];
+      const imageUrls = [...existingImages];
       for (const file of selectedFiles) {
         const storageRef = ref(storage, `articles/${file.name}`);
         await uploadBytes(storageRef, file);
@@ -59,9 +126,17 @@ function ProfilePage() {
 
       const formDataWithImages = { ...formData, imageUrls, status: "pending" };
 
-      await addDoc(collectionRef, formDataWithImages);
+     
 
-      alert("Article submitted successfully!");
+      if (id) {
+        // Update the existing article
+        await updateDoc(doc(db, "articles", id), formDataWithImages);
+        alert("Article updated successfully!");
+      } else {
+        // Create a new article
+        await addDoc(collectionRef, { ...formDataWithImages, status: "pending" });
+        alert("Article submitted successfully!");
+      }
 
       setSelectedFiles([]);
       setImagePreviews([]);
@@ -172,6 +247,7 @@ function ProfilePage() {
             <div style={{ marginBottom: "15px" }}>
               <label htmlFor="imageUpload" style={{ display: "block", marginBottom: "5px" }}>Upload Image(s):</label>
               <Input
+              disabled={isTitleUnique||uploading}
                 type="file"
                 id="imageUpload"
                 name="imageUpload"
@@ -180,26 +256,72 @@ function ProfilePage() {
                 onChange={handleFileChange}
                 style={{ display: "none" }}
               />
-              <label htmlFor="imageUpload" style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "10px 20px", fontSize: "16px", borderRadius: "5px", cursor: "pointer" }}>
+              {(isTitleUnique|| uploading)?
+              <label htmlFor="imageUpload" 
+              style={{ 
+                backgroundColor: "gray", 
+                color: "#fff", 
+                border: "none", 
+                padding: "10px 20px", 
+                fontSize: "16px", 
+                borderRadius: "5px", 
+                }}>
                 Select Image(s)
               </label>
-              {imagePreviews.length > 0 && (
+              :
+              <label htmlFor="imageUpload" 
+              style={{ 
+                backgroundColor: "#007bff", 
+                color: "#fff", 
+                border: "none", 
+                padding: "10px 20px", 
+                fontSize: "16px", 
+                borderRadius: "5px", 
+                cursor: "pointer" }}>
+                Select Image(s)
+              </label>
+              }
+              {(existingImages.length > 0 || imagePreviews.length > 0) && (
                 <div>
                   <h3>Selected Image(s):</h3>
                   <div style={{ display: "flex", flexWrap: "wrap" }}>
-                    {imagePreviews.map((preview, index) => (
-                      <img key={index} src={preview} alt={`Preview ${index}`} style={{ width: "100px", height: "100px", margin: "5px" }} />
+                    {existingImages.map((url, index) => (
+                      <div key={index} style={{ position: "relative" }}>
+                        <img src={url} alt={`Existing ${index}`} style={{ width: "100px", height: "100px", margin: "5px" }} />
+                        <Button
+                          color="danger"
+                          size="sm"
+                          style={{ position: "absolute", top: "5px", right: "5px" }}
+                          onClick={() => handleRemoveImage(index, true)}
+                        >
+                          &times;
+                        </Button>
+                      </div>
                     ))}
-                  </div>
+                    {imagePreviews.map((preview, index) => (
+                      <div key={index} style={{ position: "relative" }}>
+                        <img src={preview} alt={`Preview ${index}`} style={{ width: "100px", height: "100px", margin: "5px" }} />
+                        <Button
+                          color="danger"
+                          size="sm"
+                          style={{ position: "absolute", top: "5px", right: "5px" }}
+                          onClick={() => handleRemoveImage(index, false)}
+                        >
+                          &times;
+                        </Button>
+                      </div>
+                    ))}
+                           </div>
                 </div>
               )}
             </div>
             <Button
               type="submit"
-              disabled={uploading}
+              disabled={uploading || isTitleUnique}
               style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "10px 20px", fontSize: "16px", borderRadius: "5px", cursor: "pointer" }}
             >
-              {uploading ? "Uploading..." : "Submit Article"}
+             {uploading ? "Uploading..." : id ? "Update Article" : "Submit Article"}
+            
             </Button>
           </Form>
         </Card>

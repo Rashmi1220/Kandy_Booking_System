@@ -14,6 +14,7 @@ import ProfilePage from "views/User/ProfilePage";
 import DetailPage from "views/home/DetailPage";
 import AdminLogin from "views/home/Admin/AdminLogin";
 import Dashboard from "views/home/Admin/Dashboard/Dashboard";
+import KandyMap from "views/home/Map/Map";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -25,7 +26,9 @@ root.render(
       <Route path="/article/:articleId" element={<DetailPage />} />
       <Route path="/signUp" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/map" element={<KandyMap />} />
       <Route path="/adminLogin" element={<AdminLogin />} />
+      <Route path="/profilePage/:id" element={<ProfilePage />} />
       <Route path="/profilePage" element={<ProfilePage />} />
       <Route path="/dashboard" element={<Dashboard />} />
 
