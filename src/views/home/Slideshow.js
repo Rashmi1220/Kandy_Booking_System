@@ -61,7 +61,7 @@ function CarouselSection() {
 
           </div>
           <Row className="justify-content-center">
-            <Col lg="8" md="12">
+            <Col lg="10" md="15">
               <Carousel
                 activeIndex={activeIndex}
                 next={next}

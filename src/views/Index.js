@@ -32,12 +32,13 @@ function Index() {
         <IndexHeader />
         <div className="main">
           <Info/>
-          <Pic/>
+          
           {/* <Map /> */}
           <Places />
 
-          <Slideshow />
+          {/* <Slideshow /> */}
           <Information />
+          <Pic/>
           {/* <SignUp /> */}
           <About />
         </div>

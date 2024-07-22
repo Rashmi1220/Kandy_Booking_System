@@ -1,5 +1,8 @@
 import React from "react";
-import n1Image from "assets/img/n1.jpg";
+import n1Image from "assets/img/1.png";
+import tt3Image from "assets/img/2.jpg";
+import t1Image from "assets/img/4.png";
+import t2Image from "assets/img/5.png";
 
 const styles = {
   gallery: {
@@ -41,7 +44,7 @@ function Pic() {
       <div style={styles.responsive}>
         <div style={styles.gallery}>
           <a target="_blank" href="img_5terre.jpg">
-            <img src="1.jpg" alt="Cinque Terre" style={styles.img} />
+          <img src={t2Image} alt="Cinque Terre" style={styles.img} />
           </a>
           <div style={styles.desc}>Add a description of the image here</div>
         </div>
@@ -50,7 +53,7 @@ function Pic() {
       <div style={styles.responsive}>
         <div style={styles.gallery}>
           <a target="_blank" href="img_forest.jpg">
-            <img src="2.jpg" alt="Forest" style={styles.img} />
+            <img src={t1Image} alt="Forest" style={styles.img} />
           </a>
           <div style={styles.desc}>Add a description of the image here</div>
         </div>
@@ -59,7 +62,7 @@ function Pic() {
       <div style={styles.responsive}>
         <div style={styles.gallery}>
           <a target="_blank" href="img_lights.jpg">
-            <img src="3.jpg" alt="Northern Lights" style={styles.img} />
+            <img src={tt3Image} alt="Northern Lights" style={styles.img} />
           </a>
           <div style={styles.desc}>Add a description of the image here</div>
         </div>

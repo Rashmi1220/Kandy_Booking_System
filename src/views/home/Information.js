@@ -1,38 +1,90 @@
 import React from "react";
-
-// reactstrap components
 import { Container, Row, Col } from "reactstrap";
+import CarouselSection from "./Slideshow";
 
-// core components
+const styles = {
+  section: {
+    backgroundColor: "#f0f8ff",
+    padding: "40px 0",
+  },
+  title: {
+    fontSize: "2.5rem",
+    fontWeight: "bold",
+    marginBottom: "20px",
+    color: "#2c3e50",
+    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+  },
+  point: {
+    fontSize: "1.1rem",
+    margin: "10px 0",
+    lineHeight: "1.6",
+    color: "#34495e",
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
+  },
+  heading: {
+    fontSize: "1.5rem",
+    fontWeight: "600",
+    marginTop: "20px",
+    color: "#16a085",
+  },
+  container: {
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    borderRadius: "10px",
+    padding: "20px",
+    backgroundColor: "#ffffff",
+  },
+  contentRow: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+  },
+  textCol: {
+    flex: 1,
+    marginRight: "20px",
+  },
+  carouselCol: {
+    flex: "0 0 40%",
+  },
+};
 
 function Kandy() {
   return (
-    <>
-      <div className="section" >
-        <Container className="text-center" >
-          <Row className="justify-content-md-center">
-            <Col lg="12" md="12">
-              <h2 className="title" >The Kingdom of Kandy</h2>
-              <h5 className="text-justify"  >
-              City of Kandy lies in center of Sri Lanka at a elevation of about 485 metres above sea level and about 116 Kms from Colombo. Generally considered the capital of the hill country, Kandy was the last capital of last generation of Sri Lanka Kings which finally fell under British rule in 1815. The Name Kandy was given by the English as a derivation of “Kanda Uda Rata”. The current Sri Lankan name is “Maha Nuwara” and the historical name of this city is Senkadagalapura.
+    <div className="section" style={styles.section}>
+      <Container className="text-center" style={styles.container}>
+        <h2 className="title" style={styles.title}>The Kingdom of Kandy</h2>
 
-According to folklore the name Senkadagala originated from a Brahmin called Senkadagala who lived in the area or from a queen (called Senkada) of King Wickramabahu or from a coloured stone called Senkada gala.
 
-Senkadagalapura was established as a city by the King Wickramabahu III (of Gampola Era) during his reign from 1357-1374 AD. Senasammata Wickremabahu ascended the throne in the 15th century (1473-1511) making it the new capital of the Kandyan Kingdom. Until the 19th century, Kandy was the capital city and thus the home of the Royal Palace and the “Dalada Maligawa” (Temple of the Tooth relic).
+        <Row style={styles.contentRow}>
+          <Col style={styles.textCol}>
 
-Despite fall of coastal regions to the foreign invaders ( Portuguese, Dutch and English) the Kingdom of Kandy managed to hold its independence surviving many invasions due to the torturous access routes through mountains. Kandy finally submitted to the British in 1815 when its chieftains voluntarily submitted to British rule by signing a pact with Britain at the “Magul Maduwa” which stands to this day near the Dalada Maligawa by the Kandy lakeside.
-
-The last king of Sri Lanka, King Sri Wickrama Rajasinhe was imprisoned by the British and sent to a prison in India and lived as a prisoner until his death. With his capture, probably the longest Royal Dynasty in the world which survived since 6th century BC (over 2350 years) came to an end .
-
-Even after the invasion, Kandy has managed to preserve its function as the religious capital of Sri Lanka and a place of pilgrimage for practitioners of the most purest form of Buddhism.
-
-Kandy is also popular because of the annual festival known as the ” Esala Maha Perahera” in which the Tooth relic of Buddha is taken in a grand procession through the streets of the city. The tooth relic is taken on a royal tusker. The procession includes traditional dancers and drummers, flag bearers of the provinces of the old Kandyan kingdom, the Nilames (temple custodians) wearing their traditional dresses, torch bearers and also the grandly attired elephants. This ceremony which is annually held in the month of July, attracts large crowds fro all parts of the country and many foreign tourists.
-              </h5>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </>
+          <Col style={styles.carouselCol}>
+            <CarouselSection />
+          </Col>
+            <h5 className="text-justify" style={styles.point}>
+              <div style={styles.heading}>Nature</div>
+              - City of Kandy lies in the center of Sri Lanka at an elevation of about 485 meters above sea level.<br />
+              - Surrounded by misty hills and a beautiful central lake.
+            </h5>
+            <h5 className="text-justify" style={styles.point}>
+              <div style={styles.heading}>Culture</div>
+              - Last capital of the Sri Lankan Kings.<br />
+              - Known as “Maha Nuwara” in Sinhalese, historically called Senkadagalapura.
+            </h5>
+            <h5 className="text-justify" style={styles.point}>
+              <div style={styles.heading}>Tradition</div>
+              - Home of the “Dalada Maligawa” (Temple of the Tooth Relic).<br />
+              - Preserves the purest form of Buddhism and is a place of pilgrimage.
+            </h5>
+            <h5 className="text-justify" style={styles.point}>
+              <div style={styles.heading}>Beauty</div>
+              - Known for the annual festival “Esala Maha Perahera”.<br />
+              - Grand procession featuring traditional dancers, drummers, and grandly attired elephants.
+            </h5>
+          </Col>
+         
+        </Row>
+      </Container>
+    </div>
   );
 }
 
