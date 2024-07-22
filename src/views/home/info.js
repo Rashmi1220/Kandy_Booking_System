@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, CardBody, CardImg } from "reactstrap";
 import n1Image from "assets/img/n1.jpg";
-import n2Image from "assets/img/n1.jpg";
-import n3Image from "assets/img/n1.jpg";
+import n2Image from "assets/img/n2.jpg";
+import n3Image from "assets/img/n3.jpg";
 import "assets/css/animations.css";
 
 const styles = {
@@ -69,13 +69,14 @@ const Info = () => {
       image: n1Image,
     },
     {
-      title: "Galle Sri Lanka",
-      text: "Galle is a city on the southwest coast of Sri Lanka. It's known for Galle Fort, the fortified old city founded by Portuguese colonists in the 16th century. Stone sea walls, expanded by the Dutch, encircle car-free streets with architecture reflecting Portuguese, Dutch and British rule. Notable buildings include the 18th-century Dutch Reformed Church.",
+      title: "Beautiful tea estate ",
+      text: "On a tea plantation visit, you can learn all about tea picking and tea processing and also enjoy some fine Sri Lankan tea tasting.  It’s probably a much more exciting prospect if you’re a tea lover, but even if you’re not, the Hill Country (or Tea Country, as it’s sometimes called) is arguably the most scenic part of the island and worth a visit.",
+
       image: n2Image,
     },
     {
-      title: "Ella Sri Lanka",
-      text: "Ella is a small town in the Badulla District of Uva Province, Sri Lanka. Governed by an Urban Council, it is approximately 200 kilometres east of Colombo and is situated at an elevation of 1,041 metres above sea level. The area has a rich bio-diversity, dense with numerous varieties of flora and fauna.",
+      title: "Culture Show",
+      text: "A Perahera is a cultural procession - an ancient historic ritual where tradition, religion, and the arts all come together. Musicians, dancers, chieftains and hundreds of elephants dressed in glittering royal finery move to the rhythm of the drums and parade along the streets for several nights for all to see.",
       image: n3Image,
     },
   ];

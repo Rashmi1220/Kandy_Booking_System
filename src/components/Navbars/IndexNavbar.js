@@ -111,6 +111,19 @@ function IndexNavbar() {
               <NavItem>
                 <NavLink
                   onClick={(e) => {
+                    navigate("/contact");
+                    e.preventDefault();
+                  }}
+                >
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
+                       {/* <i class="fa fa-map-marker" aria-hidden="true"></i> */}
+                  <p>Contact</p>
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink
+                  onClick={(e) => {
                     navigate("/login");
                     e.preventDefault();
                   }}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import { Container, Navbar, NavbarBrand } from "reactstrap";
 
 // Leaflet marker icons setup
 delete L.Icon.Default.prototype._getIconUrl;
@@ -65,7 +66,12 @@ function KandyMap() {
 
     return (
         <div className="section section-tabs" id="map" style={{ border: "1px solid white", padding: "1px", borderRadius: "1px" }}>
+        <Navbar color="dark green" light expand="md">
+                <Container>
+                    <NavbarBrand href="/"> <h4 style={{ color: "gold", fontFamily: "fantasy" }}>Kandy Travel Guider</h4> </NavbarBrand>
 
+                </Container>
+            </Navbar>
             <h3 className="title">Kandy District Map</h3>
             <form onSubmit={handleSearch} style={{ marginBottom: "10px", display: "flex", justifyContent: "center" }}>
                 <input
