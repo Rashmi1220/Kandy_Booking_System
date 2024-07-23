@@ -57,8 +57,8 @@ function IndexHeader() {
               className="n-logo"
               src={require("assets/img/redmark.png")}
             ></img> */}
-            <h1 className="h1-seo">Discover story-worthy travel moments</h1>
-            <h3>Make memories on your next trip</h3>
+            <h1 style={{fontFamily:"times new roman", fontSize:"4rem", }}>Discover story-worthy travel moments</h1>
+            <h3 style={{fontPalette:"light", fontStyle:"italic"}}>Make memories on your next trip</h3>
           </div>
         </Container>
       </div>
