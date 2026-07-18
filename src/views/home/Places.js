@@ -3,12 +3,10 @@ import { Button, Container, CardImg, CardBody, CardText, Card, Row, Col } from "
 import { useNavigate } from "react-router-dom";
 import { collection, getDocs, query, where, or } from "firebase/firestore";
 import { db } from "../../firebase.config";
-import w1 from "assets/img/a1.png";
+
 
 const styles = {
   section: {
-    // backgroundColor: "#c0ecf0",
-    // backgroundImage: `url(${w1})`,
     paddingTop: "20px",
     paddingBottom: "20px",
     minHeight: "100vh", // Ensures the section covers the viewport height

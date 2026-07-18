@@ -85,9 +85,32 @@ function Login() {
                   </InputGroup>
                 </CardBody>
                 <CardFooter className="text-center">
-                  <Button className="btn-neutral btn-round" color="info" type="submit">Submit</Button>
+                  <Button
+                    className="btn-neutral btn-round"
+                    color="info"
+                    type="submit"
+                    style={{ padding: "10px 40px", borderRadius: "25px", fontWeight: "600" }}
+                  >
+                    Sign In
+                  </Button>
                   <br />
-                  <Button onClick={() => navigate("/signUp")}>Create Account</Button>
+                  <Button
+                    onClick={() => navigate("/signUp")}
+                    style={{
+                      marginTop: "10px",
+                      backgroundColor: "transparent",
+                      border: "2px solid #007bff",
+                      color: "#007bff",
+                      padding: "8px 25px",
+                      borderRadius: "25px",
+                      fontSize: "14px",
+                      fontWeight: "600",
+                      cursor: "pointer",
+                      transition: "all 0.3s ease",
+                    }}
+                  >
+                    Create Account
+                  </Button>
                 </CardFooter>
               </Form>
             </Card>

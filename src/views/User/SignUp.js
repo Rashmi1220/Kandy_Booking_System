@@ -278,9 +278,27 @@ function SignUp() {
                   size="lg"
                   type="submit"
                   disabled={uploading}
-                  style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "10px 20px", fontSize: "16px", borderRadius: "5px", cursor: "pointer" }}
+                  style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "12px 40px", fontSize: "16px", borderRadius: "25px", fontWeight: "600", cursor: "pointer", boxShadow: "0 4px 15px rgba(0,123,255,0.3)" }}
                 >
-                  {uploading ? "Uploading..." : "Get Started"}
+                  {uploading ? "Creating Account..." : "Get Started"}
+                </Button>
+                <br />
+                <Button
+                  onClick={() => navigate("/login")}
+                  style={{
+                    marginTop: "12px",
+                    backgroundColor: "transparent",
+                    border: "2px solid #007bff",
+                    color: "#007bff",
+                    padding: "8px 25px",
+                    borderRadius: "25px",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  Already have an account? Sign In
                 </Button>
               </CardFooter>
             </Form>

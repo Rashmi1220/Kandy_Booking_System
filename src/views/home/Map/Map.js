@@ -66,10 +66,11 @@ function KandyMap() {
 
     return (
         <div className="section section-tabs" id="map" style={{ border: "1px solid white", padding: "1px", borderRadius: "1px" }}>
-        <Navbar color="dark green" light expand="md">
+            <Navbar color="dark green" light expand="md" style={{ boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
                 <Container>
-                    <NavbarBrand href="/"> <h4 style={{ color: "gold", fontFamily: "fantasy" }}>Kandy Travel Guider</h4> </NavbarBrand>
-
+                    <NavbarBrand href="/" style={{ color: "gold", fontFamily: "fantasy" }}>
+                        <h4 style={{ color: "gold", fontFamily: "fantasy" }}>Kandy Travel Guider</h4>
+                    </NavbarBrand>
                 </Container>
             </Navbar>
             <h3 className="title">Kandy District Map</h3>
@@ -78,10 +79,10 @@ function KandyMap() {
                     type="text"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Search location"
-                    style={{ padding: "10px", width: "70%", marginRight: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
+                    placeholder="Search any location in Kandy..."
+                    style={{ padding: "10px 18px", width: "70%", marginRight: "10px", borderRadius: "25px", border: "1px solid #ddd", fontSize: "15px", boxShadow: "0 2px 8px rgba(0,0,0,0.05)" }}
                 />
-                <button type="submit" style={{ padding: "10px", borderRadius: "5px", border: "1px solid #ccc", background: "#007bff", color: "white" }}>
+                <button type="submit" style={{ padding: "10px 25px", borderRadius: "25px", border: "none", background: "#007bff", color: "white", fontSize: "15px", fontWeight: "600", cursor: "pointer", boxShadow: "0 4px 10px rgba(0,123,255,0.3)", transition: "all 0.3s ease" }}>
                     Search
                 </button>
             </form>
